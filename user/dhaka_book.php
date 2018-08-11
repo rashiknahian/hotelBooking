@@ -6,34 +6,37 @@ if (!isset($_SESSION['userSession'])) {
 	header("Location: index.php");
 }
 
-$query = $DBcon->query("SELECT * FROM hotels WHERE user_id=".$_SESSION['userSession']);
+$query = $DBcon->query("SELECT * FROM users WHERE user_id=".$_SESSION['userSession']);
 $userRow=$query->fetch_array();
 
+$get=$DBcon->query("SELECT name FROM dhakaHotel");
 if(isset($_POST["submit"])){
 
 
-        //Database Connection Establish
-        include "../dbconnect.php";
+        
         
         //Variables for Form Data
         $username = $userRow['email'];
         $name = mysqli_real_escape_string($DBcon, $_POST['name']);
-        $email = mysqli_real_escape_string($DBcon, $_POST['email']);
-        $phone = mysqli_real_escape_string($DBcon, $_POST['phone']);
+        $in = mysqli_real_escape_string($DBcon, $_POST['email']);
+        $out = mysqli_real_escape_string($DBcon, $_POST['phone']);
         $address = mysqli_real_escape_string($DBcon, $_POST['address']);
         $rent = mysqli_real_escape_string($DBcon, $_POST['rent']);
         $room = mysqli_real_escape_string($DBcon, $_POST['room']);
         $dataTime = date("Y-m-d H:i:s");
         
         //Insert Form Data into database
-        $insert = $DBcon->query("INSERT into dhakaHotel (username,name,email,phone,address,rent,room,created) VALUES ('$username','$name','$email','$phone','$address','$rent','$room', '$dataTime')");
+        $insert = $DBcon->query("INSERT into dhakaHotelRent (username,name,email,phone,address,rent,room,created) VALUES ('$username','$name','$in','$out','$address','$rent','$room', '$dataTime')");
         if($insert){
              $msg = "<div class='alert alert-success'>
                 <span class='glyphicon glyphicon-info-sign'></span> &nbsp; Registration Success Full !
                 
             </div>";
         }else{
-            echo "Please try again.";
+            $msg = "<div class='alert alert-success'>
+                <span class='glyphicon glyphicon-info-sign'></span> &nbsp; Please try again.!
+                
+            </div>";
         } 
     }
 $DBcon->close();
@@ -59,20 +62,32 @@ $DBcon->close();
                             ?>
                 <form method="post" enctype='multipart/form-data'>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Hotel Name" name="name" required />
+                        <select class="form-control" name="name" required> 
+    <option value="0">Please Select Hotel</option>
+        <?php
+            while($row = mysqli_fetch_assoc($get))
+            {
+            ?>
+            <option value = "<?php echo($row['name'])?>" >
+                <?php echo($row['name']) ?>
+            </option>
+            <?php
+            }               
+        ?>
+    </select>
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Email" name="email" required />
+                        <input type="text" class="form-control" placeholder="Check In Date" name="email" required />
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Phone No" name="phone" required />
+                        <input type="text" class="form-control" placeholder="Check Out Date" name="phone" required />
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Address" name="address" required />
+                        <input type="text" class="form-control" placeholder="No. of Adults" name="address" required />
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Per Room Rent" name="rent" required />
+                        <input type="text" class="form-control" placeholder="No. of Children" name="rent"  />
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Available Room" name="room" required />

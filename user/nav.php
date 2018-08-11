@@ -13,7 +13,10 @@
           <ul class="nav navbar-nav">
            
             <li><a href="home.php">Home</a></li>
-            
+             <li><a href="dhaka_book.php">Dhaka Hotel Add</a></li>
+            <li><a href="chattogram.php">Chattogram Hotel Add</a></li>
+            <li><a href="coxbazar.php">Cox's Bazar Hotel Add</a></li>
+            <li><a href="sylhet.php">Sylhet Hotel Add</a></li>
        
           </ul>
           <ul class="nav navbar-nav navbar-right">
