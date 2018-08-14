@@ -9,7 +9,7 @@ if (!isset($_SESSION['userSession'])) {
 $query = $DBcon->query("SELECT * FROM users WHERE user_id=".$_SESSION['userSession']);
 $userRow=$query->fetch_array();
 
-$get=$DBcon->query("SELECT name FROM dhakaHotel");
+$get=$DBcon->query("SELECT name FROM sylhetHotel");
 if(isset($_POST["submit"])){
 
 
@@ -26,7 +26,7 @@ if(isset($_POST["submit"])){
         $dataTime = date("Y-m-d H:i:s");
         
         //Insert Form Data into database
-        $insert = $DBcon->query("INSERT into dhakaHotelRent (username,name,chkin,chkout,noAdults,noChild,room,created) VALUES ('$username','$name','$in','$out','$adults','$child','$room', '$dataTime')");
+        $insert = $DBcon->query("INSERT into sylhetHotelRent (username,name,chkin,chkout,noAdults,noChild,room,created) VALUES ('$username','$name','$in','$out','$adults','$child','$room', '$dataTime')");
         if($insert){
              $msg = "<div class='alert alert-success'>
                 <span class='glyphicon glyphicon-info-sign'></span> &nbsp; Registration Success Full !
@@ -54,7 +54,7 @@ $DBcon->close();
         <?php include("nav.php");?>
 
         <div class="container" style="margin-top:150px;text-align:center;font-family:Verdana, Geneva, sans-serif;font-size:35px;">
-            <h1>Book your Room - Dhaka Area</h1>
+            <h1>Book your Room  - Sylhet Area</h1>
             <?php
                             if (isset($msg)) {
                                 echo $msg;
