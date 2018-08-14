@@ -20,13 +20,13 @@ if(isset($_POST["submit"])){
         $name = mysqli_real_escape_string($DBcon, $_POST['name']);
         $in = mysqli_real_escape_string($DBcon, $_POST['email']);
         $out = mysqli_real_escape_string($DBcon, $_POST['phone']);
-        $address = mysqli_real_escape_string($DBcon, $_POST['address']);
-        $rent = mysqli_real_escape_string($DBcon, $_POST['rent']);
+        $adults = mysqli_real_escape_string($DBcon, $_POST['address']);
+        $child = mysqli_real_escape_string($DBcon, $_POST['rent']);
         $room = mysqli_real_escape_string($DBcon, $_POST['room']);
         $dataTime = date("Y-m-d H:i:s");
         
         //Insert Form Data into database
-        $insert = $DBcon->query("INSERT into dhakaHotelRent (username,name,email,phone,address,rent,room,created) VALUES ('$username','$name','$in','$out','$address','$rent','$room', '$dataTime')");
+        $insert = $DBcon->query("INSERT into dhakaHotelRent (username,name,email,phone,address,rent,room,created) VALUES ('$username','$name','$in','$out','$adults','$child','$room', '$dataTime')");
         if($insert){
              $msg = "<div class='alert alert-success'>
                 <span class='glyphicon glyphicon-info-sign'></span> &nbsp; Registration Success Full !
@@ -90,7 +90,7 @@ $DBcon->close();
                         <input type="text" class="form-control" placeholder="No. of Children" name="rent"  />
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Available Room" name="room" required />
+                        <input type="text" class="form-control" placeholder="No. of Room" name="room" required />
                     </div>
 
                     <div class="form-group">

@@ -8,7 +8,7 @@ if (!isset($_SESSION['userSession'])) {
 
 $query = $DBcon->query("SELECT * FROM admin WHERE user_id=".$_SESSION['userSession']);
 $userRow=$query->fetch_array();
-$DBcon->close();
+
 
 ?>
     <!DOCTYPE html>
@@ -22,10 +22,43 @@ $DBcon->close();
 
         <?php include("nav.php");?>
 
-        <div class="container" style="margin-top:150px;text-align:center;font-family:Verdana, Geneva, sans-serif;font-size:35px;">
-            
+        <div class="container" style="margin-top:150px;text-align:center;font-family:Verdana, Geneva, sans-serif;">
+               <!-- Data View In Table-->
+                <table class="table table-bordered table-striped table-hover table-responsive" id="tableData">
+                    <thead>
+                        <tr class="success">
+                            <th>Booking Time</th>
+                            <th>Hotel Name</th>
+                            <th>Check In Time</th>
+                            <th>Check Out Time</th>
+                            <th>No. of Adults</th>
+                            <th>No. of Children</th>
+                            <th>No. of Rooms</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+            $query2 = $DBcon->query("SELECT * FROM dhakaHotelRent");
+            while($data=$query2->fetch_array()){
+           echo "
+                <tr>
+                    <td>".$data['created']."</td>
+                    <td>".$data['name']."</td>
+                    <td>".$data['email']."</td>
+                    <td>".$data['phone']."</td>
+                    <td>".$data['address']."</td>
+                    <td>".$data['rent']."</td>
+                    <td>".$data['room']."</td>
+                    
+                </tr>
+                "; 
+            }
+            //While Loop Ends
+            ?>
+                    </tbody>
+                </table>
         </div>
 
     </body>
-
+<?php $DBcon->close();?>
     </html>
