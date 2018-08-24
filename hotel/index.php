@@ -34,10 +34,11 @@ if (isset($_POST['btn-login'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
  <?php include("head.php");?>
 </head>
 <body>
-
+<div class="bg">
 <div class="signin-form">
 
 	<div class="container">
@@ -80,6 +81,6 @@ if (isset($_POST['btn-login'])) {
     </div>
     
 </div>
-
+</div>
 </body>
 </html>

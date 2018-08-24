@@ -17,7 +17,7 @@ if(isset($_POST["submit"])){
         
         //Variables for Form Data
         $username = $userRow['email'];
-        $name = mysqli_real_escape_string($DBcon, $_POST['name']);
+        $name = $userRow['name'];
         $email = mysqli_real_escape_string($DBcon, $_POST['email']);
         $phone = mysqli_real_escape_string($DBcon, $_POST['phone']);
         $address = mysqli_real_escape_string($DBcon, $_POST['address']);
@@ -26,7 +26,7 @@ if(isset($_POST["submit"])){
         $dataTime = date("Y-m-d H:i:s");
         
         //Insert Form Data into database
-        $insert = $DBcon->query("INSERT into dhakaHotel (username,name,email,phone,address,rent,room,created) VALUES ('$username','$name','$email','$phone','$address','$rent','$room', '$dataTime')");
+        $insert = $DBcon->query("INSERT into sylhetHotel (username,name,email,phone,address,rent,room,created) VALUES ('$username','$name','$email','$phone','$address','$rent','$room', '$dataTime')");
         if($insert){
              $msg = "<div class='alert alert-success'>
                 <span class='glyphicon glyphicon-info-sign'></span> &nbsp; Registration Success Full !
@@ -58,9 +58,7 @@ $DBcon->close();
                             }
                             ?>
                 <form method="post" enctype='multipart/form-data'>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Hotel Name" name="name" required />
-                    </div>
+                    
 
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Email" name="email" required />

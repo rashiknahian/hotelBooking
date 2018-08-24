@@ -10,7 +10,7 @@ body{
     padding: 19px 29px 29px;
     margin: 0 auto;
 	//margin-top:90px;
-    background-color: #fff;
+    /*background-color: #fff;*/
 	
     border: 1px solid #e5e5e5;
     -webkit-border-radius: 5px;
@@ -46,4 +46,60 @@ body{
 }
 #btn-submit{
 	height:45px;
+}
+#about{
+    padding: 20px 10px;
+}
+h1{
+    text-align: center;
+    padding: 20px;
+}
+#about p{
+    text-align: justify;
+}
+.subscribe-section {
+    background: rgba(0, 0, 0, 0) url("../Img/subscribe.jpeg") no-repeat scroll left top / cover;
+    padding: 60px 0 65px;
+}
+.subscribe-head h2 {
+    color: #fff;
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 30px;
+    margin: 0 0 13px;
+    text-transform: uppercase;
+}
+.subscribe-head p {
+    color: #fff;
+    font-size: 18px;
+    line-height: 22px;
+    margin: 0 0 39px;
+}
+.subscribe-head {
+    text-align: center;
+}
+.form-section input[type="email"] {
+    border: 0 none;
+    border-radius: 25px;
+    color: #9b9b9b;
+    font-size: 16px;
+    font-style: normal;
+    height: 51px;
+    letter-spacing: 0;
+    text-align: center;
+    width: 460px;
+}
+.form-section input[type="submit"] {
+    background: #fdb801 none repeat scroll 0 0;
+    border: 0 none;
+    border-radius: 25px;
+    color: #fff;
+    height: 51px;
+    letter-spacing: 0;
+    margin-left: -60px;
+    padding: 0 58px;
+}
+.bg-lightgray
+{
+    background-color:LightGray;
 }

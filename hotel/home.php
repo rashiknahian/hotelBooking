@@ -23,7 +23,7 @@ $DBcon->close();
         <?php include("nav.php");?>
 
         <div class="container" style="margin-top:150px;text-align:center;font-family:Verdana, Geneva, sans-serif;font-size:35px;">
-            
+            <h1>Welcome <br><br><?php echo $userRow['name']; ?></h1>
         </div>
 
     </body>

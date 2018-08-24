@@ -7,17 +7,11 @@ require_once '../dbconnect.php';
 
 if(isset($_POST['btn-signup'])) {
 	
-	$name = strip_tags($_POST['name']);
-	$gender = strip_tags($_POST['gender']);
-	$address = strip_tags($_POST['address']);
-	$mobile = strip_tags($_POST['mobile']);
+	
 	$email = strip_tags($_POST['email']);
 	$upass = strip_tags($_POST['password']);
 	
-	$name = $DBcon->real_escape_string($name);
-	$gender = $DBcon->real_escape_string($gender);
-	$address = $DBcon->real_escape_string($address);
-	$mobile = $DBcon->real_escape_string($mobile);
+	
 	$email = $DBcon->real_escape_string($email);
 	$upass = $DBcon->real_escape_string($upass);
 	
@@ -28,7 +22,7 @@ if(isset($_POST['btn-signup'])) {
 	
 	if ($count==0) {
 		
-		$query = "INSERT INTO users(name,gender,address,mobile,email,password) VALUES('$name','$gender','$address','$mobile','$email','$hashed_password')";
+		$query = "INSERT INTO users(email,password) VALUES('$email','$hashed_password')";
 
 		if ($DBcon->query($query)) {
 			$msg = "<div class='alert alert-success'>
@@ -77,22 +71,8 @@ if(isset($_POST['btn-signup'])) {
 		}
 		?>
 
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Full Name" name="name" required />
-                            <span id="check-e"></span>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Gender" name="gender" required />
-                            <span id="check-e"></span>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Address" name="address" required />
-                            <span id="check-e"></span>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Mobile" name="mobile" required />
-                            <span id="check-e"></span>
-                        </div>
+
+
                         <div class="form-group">
                             <input type="email" class="form-control" placeholder="Email address" name="email" required />
                             <span id="check-e"></span>

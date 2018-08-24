@@ -7,11 +7,11 @@ require_once '../dbconnect.php';
 
 if(isset($_POST['btn-signup'])) {
 	
-	
+	$name = strip_tags($_POST['name']);
 	$email = strip_tags($_POST['email']);
 	$upass = strip_tags($_POST['password']);
 	
-	
+	$name = $DBcon->real_escape_string($name);
 	$email = $DBcon->real_escape_string($email);
 	$upass = $DBcon->real_escape_string($upass);
 	
@@ -22,7 +22,7 @@ if(isset($_POST['btn-signup'])) {
 	
 	if ($count==0) {
 		
-		$query = "INSERT INTO hotels(email,password) VALUES('$email','$hashed_password')";
+		$query = "INSERT INTO hotels(name,email,password) VALUES('$name','$email','$hashed_password')";
 
 		if ($DBcon->query($query)) {
 			$msg = "<div class='alert alert-success'>
@@ -67,7 +67,10 @@ if(isset($_POST['btn-signup'])) {
 			echo $msg;
 		}
 		?>
-          
+            <div class="form-group">
+        <input type="text" class="form-control" placeholder="Hotel Name" name="name" required  />
+        <span id="check-e"></span>
+        </div>
       
         
         <div class="form-group">

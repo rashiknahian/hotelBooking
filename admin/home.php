@@ -35,6 +35,11 @@ $userRow=$query->fetch_array();
                             <th>No. of Adults</th>
                             <th>No. of Children</th>
                             <th>No. of Rooms</th>
+                            <th>User Full Name</th>
+                            <th>Gender</th>
+                            <th>Address</th>
+                            <th>Mobile Number</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
@@ -44,12 +49,16 @@ $userRow=$query->fetch_array();
            echo "
                 <tr>
                     <td>".$data['created']."</td>
-                    <td>".$data['name']."</td>
-                    <td>".$data['email']."</td>
-                    <td>".$data['phone']."</td>
-                    <td>".$data['address']."</td>
-                    <td>".$data['rent']."</td>
+                    <td>".$data['hotelName']."</td>
+                    <td>".$data['chkin']."</td>
+                    <td>".$data['chkout']."</td>
+                    <td>".$data['noAdults']."</td>
+                    <td>".$data['noChild']."</td>
                     <td>".$data['room']."</td>
+                    <td>".$data['name']."</td>
+                    <td>".$data['gender']."</td>
+                    <td>".$data['address']."</td>
+                    <td>".$data['mobile']."</td>
                     
                 </tr>
                 "; 
@@ -70,6 +79,10 @@ $userRow=$query->fetch_array();
                             <th>No. of Adults</th>
                             <th>No. of Children</th>
                             <th>No. of Rooms</th>
+                            <th>User Full Name</th>
+                            <th>Gender</th>
+                            <th>Address</th>
+                            <th>Mobile Number</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -78,13 +91,17 @@ $userRow=$query->fetch_array();
             while($data=$query2->fetch_array()){
            echo "
                 <tr>
-                    <td>".$data['created']."</td>
-                    <td>".$data['name']."</td>
-                    <td>".$data['email']."</td>
-                    <td>".$data['phone']."</td>
-                    <td>".$data['address']."</td>
-                    <td>".$data['rent']."</td>
+                     <td>".$data['created']."</td>
+                    <td>".$data['hotelName']."</td>
+                    <td>".$data['chkin']."</td>
+                    <td>".$data['chkout']."</td>
+                    <td>".$data['noAdults']."</td>
+                    <td>".$data['noChild']."</td>
                     <td>".$data['room']."</td>
+                    <td>".$data['name']."</td>
+                    <td>".$data['gender']."</td>
+                    <td>".$data['address']."</td>
+                    <td>".$data['mobile']."</td>
                     
                 </tr>
                 "; 
@@ -105,6 +122,10 @@ $userRow=$query->fetch_array();
                             <th>No. of Adults</th>
                             <th>No. of Children</th>
                             <th>No. of Rooms</th>
+                            <th>User Full Name</th>
+                            <th>Gender</th>
+                            <th>Address</th>
+                            <th>Mobile Number</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -112,14 +133,18 @@ $userRow=$query->fetch_array();
             $query2 = $DBcon->query("SELECT * FROM coxbazarHotelRent");
             while($data=$query2->fetch_array()){
            echo "
-                <tr>
-                    <td>".$data['created']."</td>
-                    <td>".$data['name']."</td>
-                    <td>".$data['email']."</td>
-                    <td>".$data['phone']."</td>
-                    <td>".$data['address']."</td>
-                    <td>".$data['rent']."</td>
+               <tr>
+                     <td>".$data['created']."</td>
+                    <td>".$data['hotelName']."</td>
+                    <td>".$data['chkin']."</td>
+                    <td>".$data['chkout']."</td>
+                    <td>".$data['noAdults']."</td>
+                    <td>".$data['noChild']."</td>
                     <td>".$data['room']."</td>
+                    <td>".$data['name']."</td>
+                    <td>".$data['gender']."</td>
+                    <td>".$data['address']."</td>
+                    <td>".$data['mobile']."</td>
                     
                 </tr>
                 "; 
@@ -140,6 +165,10 @@ $userRow=$query->fetch_array();
                             <th>No. of Adults</th>
                             <th>No. of Children</th>
                             <th>No. of Rooms</th>
+                            <th>User Full Name</th>
+                            <th>Gender</th>
+                            <th>Address</th>
+                            <th>Mobile Number</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -148,13 +177,17 @@ $userRow=$query->fetch_array();
             while($data=$query2->fetch_array()){
            echo "
                 <tr>
-                    <td>".$data['created']."</td>
-                    <td>".$data['name']."</td>
-                    <td>".$data['email']."</td>
-                    <td>".$data['phone']."</td>
-                    <td>".$data['address']."</td>
-                    <td>".$data['rent']."</td>
+                     <td>".$data['created']."</td>
+                    <td>".$data['hotelName']."</td>
+                    <td>".$data['chkin']."</td>
+                    <td>".$data['chkout']."</td>
+                    <td>".$data['noAdults']."</td>
+                    <td>".$data['noChild']."</td>
                     <td>".$data['room']."</td>
+                    <td>".$data['name']."</td>
+                    <td>".$data['gender']."</td>
+                    <td>".$data['address']."</td>
+                    <td>".$data['mobile']."</td>
                     
                 </tr>
                 "; 

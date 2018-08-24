@@ -17,7 +17,7 @@ if(isset($_POST["submit"])){
         
         //Variables for Form Data
         $username = $userRow['email'];
-        $name = mysqli_real_escape_string($DBcon, $_POST['name']);
+        $name = $userRow['name'];
         $email = mysqli_real_escape_string($DBcon, $_POST['email']);
         $phone = mysqli_real_escape_string($DBcon, $_POST['phone']);
         $address = mysqli_real_escape_string($DBcon, $_POST['address']);
@@ -58,9 +58,7 @@ $DBcon->close();
                             }
                             ?>
                 <form method="post" enctype='multipart/form-data'>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Hotel Name" name="name" required />
-                    </div>
+                   
 
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Email" name="email" required />

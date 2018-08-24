@@ -12,11 +12,12 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
            
-            <li><a href="">Home</a></li>
-            <li><a href="dhaka.php">Dhaka Hotel Add</a></li>
-            <li><a href="chattogram.php">Chattogram Hotel Add</a></li>
-            <li><a href="coxbazar.php">Cox's Bazar Hotel Add</a></li>
-            <li><a href="sylhet.php">Sylhet Hotel Add</a></li>
+            <li><a href="home.php">Home</a></li>
+            <li><a href="dhaka.php">Add-Dhaka</a></li>
+            <li><a href="chattogram.php">Add-Chattogram</a></li>
+            <li><a href="coxbazar.php">Add-Cox's Bazar</a></li>
+            <li><a href="sylhet.php">Add-Sylhet</a></li>
+            <li><a href="roomBook.php">Room Book</a></li>
        
           </ul>
           <ul class="nav navbar-nav navbar-right">
